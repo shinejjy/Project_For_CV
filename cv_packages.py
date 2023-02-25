@@ -33,3 +33,23 @@ def show_image_hist(image, title=None):
         plt.title(title)
     plt.hist(image.ravel(), 256, [0, 256], color='r')
     plt.show()
+
+
+def add_pepper_noisy(image, n):
+    result = image.copy()
+    w, h = image.shape[:2]
+    for i in range(n):
+        x = np.random.randint(0, w)
+        y = np.random.randint(0, h)
+        if np.random.randint(0, 2) == 0:
+            # 白噪点
+            result[x, y] = 0
+        else:
+            # 黑噪点
+            result[x, y] = 255
+    return result
+
+
+def add_random_noisy(img):
+    noise = np.random.randint(low=0, high=255, size=img.shape)
+    return np.clip(img + noise, 0, 255).astype(np.uint8)
