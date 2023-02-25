@@ -1,0 +1,8 @@
+Conda: https://docs.conda.io/en/latest/
+JupyterLab: https://jupyterlab.readthedocs.io/en/stable/
+Python: https://docs.python.org/zh-cn/3/tutorial/index.html
+Numpy: https://www.numpy.org.cn/
+Matplotlib: https://matplotlib.org/3.1.0/tutorials/index.html
+TensorFlow: https://www.tensorflow.org/
+PyTorch: https://pytorch-cn.readthedocs.io/zh/latest/
+Pandas: http://pandas.pydata.org/pandas-docs/stable/
