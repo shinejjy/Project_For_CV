@@ -16,13 +16,11 @@ def set_figsize(figsize=(3.5, 2.5)):
 
 
 def show_image(image: np.ndarray, name=None, gray=False):
-    plt.xticks([]), plt.yticks([])
-    b, g, r = cv2.split(image)
-    image = cv2.merge([r, g, b])
     if not gray:
-        plt.imshow(image)
-    else:
-        plt.imshow(image, camp='gray')
+        plt.xticks([]), plt.yticks([])
+        b, g, r = cv2.split(image)
+        image = cv2.merge([r, g, b])
+    plt.imshow(image)
     if name:
         plt.title(name)
     plt.show()
