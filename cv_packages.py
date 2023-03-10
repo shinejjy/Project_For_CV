@@ -16,11 +16,13 @@ def set_figsize(figsize=(3.5, 2.5)):
 
 
 def show_image(image: np.ndarray, name=None, gray=False):
+    plt.xticks([]), plt.yticks([])
     if not gray:
-        plt.xticks([]), plt.yticks([])
         b, g, r = cv2.split(image)
         image = cv2.merge([r, g, b])
-    plt.imshow(image)
+        plt.imshow(image)
+    else:
+        plt.imshow(image, cmap='gray')
     if name:
         plt.title(name)
     plt.show()
@@ -51,3 +53,7 @@ def add_pepper_noisy(image, n):
 def add_random_noisy(img):
     noise = np.random.randint(low=0, high=255, size=img.shape)
     return np.clip(img + noise, 0, 255).astype(np.uint8)
+
+
+def BGR2GRAY(img):
+    return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
